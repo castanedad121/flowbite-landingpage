@@ -1,11 +1,11 @@
 import React from "react";
-
+import { AiTwotoneMail } from "react-icons/ai";
 const WhatsappButton = () => {
   return (
     <>
       <a
         href="https://api.whatsapp.com/send?phone=1234567891&text=Hola, me gustaria Obtener más información"
-        className="float fixed w-14 h-14 bottom-10 right-10  rounded-full flex items-center"
+        className="fixed w-14 h-14 bottom-10 right-10  rounded-full flex items-center hover:bg-[#1ab152]"
         target="_blank"
       >
         <svg
@@ -25,6 +25,22 @@ const WhatsappButton = () => {
             fill="#FFF"
           />
         </svg>
+      </a>
+      <a
+        href="#contact"
+        className=" fixed w-14 h-14 bottom-10 right-28  rounded-full flex items-center hover:bg-[#0B74CB]"
+      >
+        <div className="w-[50px] h-[50px] bg-[#2196F3] rounded-full border-white border-4 flex justify-center m-auto  hover:active:scale-75">
+          <svg
+            fill="#ffffff"
+            width="33"
+            height="33"
+            viewBox="0 0 24 24"
+            className="m-auto"
+          >
+            <path d="M22,5V9L12,13,2,9V5A1,1,0,0,1,3,4H21A1,1,0,0,1,22,5ZM2,11.154V19a1,1,0,0,0,1,1H21a1,1,0,0,0,1-1V11.154l-10,4Z" />
+          </svg>
+        </div>
       </a>
     </>
   );

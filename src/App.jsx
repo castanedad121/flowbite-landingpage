@@ -22,16 +22,26 @@ const App = () => {
     <div>
       <Header />
       <Hero />
-      <Features />
-      <CtaSection />
-      <ContentSection />
-      <Team />
-      <Customer />
+      <section id="company">
+        <ContentSection />
+      </section>
+      <section id="team">
+        <Team />
+      </section>
+      <section id="features">
+        <Features />
+      </section>
+      <section id="customer">
+        <Customer />
+      </section>
       <Testimonials />
+      <CtaSection />
       <Social />
       <Pricing />
+      <section id="contact">
+        <Contact />
+      </section>
       <Faq />
-      <Contact />
       <Footer />
       <WhatsappButton />
     </div>
