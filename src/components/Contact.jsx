@@ -2,17 +2,17 @@ import React from "react";
 import { IoMdClose } from "react-icons/io";
 
 const Contact = (props) => {
-  const { setShowContact } = props;
+  const { setShowContact } = props && props;
   return (
     <>
       <div
         id="defaultModal"
         tabIndex="-1"
         aria-hidden="true"
-        className=" overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full"
+        className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full h-full md:inset-0 h-modal  bg-gray-900/85 "
       >
-        <section className="w-screem h-screen bg-gray-900/85 ">
-          <div className="m-auto py-2 px-4 max-w-screen-md bg-white border border-white rounded-md dark:bg-gray-900 dark:border-gray-900">
+        <section className="w-screem">
+          <div className="mx-auto mt-1 xl:mt-4 py-2 px-4 max-w-screen-md bg-white border border-white rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] dark:bg-gray-900 dark:border-gray-900">
             <div className="flex justify-end">
               <button
                 className="z-50 text-primary-700 hover:scale-75"
@@ -21,14 +21,14 @@ const Contact = (props) => {
                 <IoMdClose className="size-11" />
               </button>
             </div>
-            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
+            <h2 className="mb-2 xl:mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
               Contact Us
             </h2>
-            <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
+            <p className="mb-2 xl:mb-8 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
               Got a technical issue? Want to send feedback about a beta feature?
               Need details about our Business plan? Let us know.
             </p>
-            <form action="#" className="space-y-8">
+            <form action="#" className="space-y-4 xl:space-y-8">
               <div>
                 <label
                   htmlFor="email"
