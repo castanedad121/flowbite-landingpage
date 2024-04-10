@@ -1,26 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Header,
   Hero,
   Features,
-  CtaSection,
   ContentSection,
   Team,
-  Pricing,
   Contact,
-  Social,
-  Faq,
-  Testimonials,
   Customer,
   Footer,
   WhatsappButton,
+  Slider,
 } from "./components/index";
 import "./App.css";
 
 const App = () => {
+  const [showContact, setShowContact] = useState(false);
   return (
     <div>
       <Header />
+      <Slider />
       <Hero />
       <section id="company">
         <ContentSection />
@@ -34,16 +32,9 @@ const App = () => {
       <section id="customer">
         <Customer />
       </section>
-      <Testimonials />
-      <CtaSection />
-      <Social />
-      <Pricing />
-      <section id="contact">
-        <Contact />
-      </section>
-      <Faq />
       <Footer />
-      <WhatsappButton />
+      <WhatsappButton setShowContact={setShowContact} />
+      {showContact && <Contact setShowContact={setShowContact} />}
     </div>
   );
 };

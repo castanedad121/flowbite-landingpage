@@ -1,11 +1,11 @@
 import React from "react";
 import { AiTwotoneMail } from "react-icons/ai";
-const WhatsappButton = () => {
+const WhatsappButton = ({ setShowContact }) => {
   return (
     <>
       <a
         href="https://api.whatsapp.com/send?phone=1234567891&text=Hola, me gustaria Obtener más información"
-        className="fixed w-14 h-14 bottom-10 right-10  rounded-full flex items-center hover:bg-[#1ab152]"
+        className="drop-shadow-xl fixed w-14 h-14 bottom-10 right-10  rounded-full flex items-center hover:bg-[#1ab152] hover:scale-125"
         target="_blank"
       >
         <svg
@@ -14,7 +14,7 @@ const WhatsappButton = () => {
           height="50"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="xMidYMid"
-          className="m-auto hover:active:scale-75"
+          className="m-auto hover:active:scale-75 drop-shadow-xl"
         >
           <path
             d="m67.663 221.823 4.185 2.093c17.44 10.463 36.971 15.346 56.503 15.346 61.385 0 111.609-50.224 111.609-111.609 0-29.297-11.859-57.897-32.785-78.824-20.927-20.927-48.83-32.785-78.824-32.785-61.385 0-111.61 50.224-110.912 112.307 0 20.926 6.278 41.156 16.741 58.594l2.79 4.186-11.16 41.156 41.853-10.464Z"
@@ -26,22 +26,22 @@ const WhatsappButton = () => {
           />
         </svg>
       </a>
-      <a
-        href="#contact"
-        className=" fixed w-14 h-14 bottom-10 right-28  rounded-full flex items-center hover:bg-[#0B74CB]"
+      <button
+        onClick={() => setShowContact(true)}
+        className="fixed w-14 h-14 bottom-10 right-28  rounded-full flex items-center hover:bg-[#0B74CB] hover:scale-125"
       >
-        <div className="w-[50px] h-[50px] bg-[#2196F3] rounded-full border-white border-4 flex justify-center m-auto  hover:active:scale-75">
+        <div className="drop-shadow-xl w-[50px] h-[50px] bg-[#2196F3] rounded-full border-white border-4 flex justify-center m-auto  hover:active:scale-75">
           <svg
             fill="#ffffff"
             width="33"
             height="33"
             viewBox="0 0 24 24"
-            className="m-auto"
+            className="m-auto drop-shadow-xl"
           >
             <path d="M22,5V9L12,13,2,9V5A1,1,0,0,1,3,4H21A1,1,0,0,1,22,5ZM2,11.154V19a1,1,0,0,0,1,1H21a1,1,0,0,0,1-1V11.154l-10,4Z" />
           </svg>
         </div>
-      </a>
+      </button>
     </>
   );
 };

@@ -12,6 +12,7 @@ import Testimonials from "./Testimonials.jsx";
 import Customer from "./Customer.jsx";
 import Footer from "./Footer.jsx";
 import WhatsappButton from "./WhatsappButton.jsx";
+import Slider from "./Slider.jsx";
 
 export {
   Header,
@@ -28,4 +29,5 @@ export {
   Customer,
   Footer,
   WhatsappButton,
+  Slider,
 };
