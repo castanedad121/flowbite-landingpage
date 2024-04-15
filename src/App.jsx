@@ -19,15 +19,14 @@ const App = () => {
     <div>
       <Header />
       <Slider />
-      <Hero />
+      <section id="features">
+        <Features />
+      </section>
       <section id="company">
         <ContentSection />
       </section>
       <section id="team">
         <Team />
-      </section>
-      <section id="features">
-        <Features />
       </section>
       <section id="customer">
         <Customer />

@@ -13,6 +13,7 @@ import Customer from "./Customer.jsx";
 import Footer from "./Footer.jsx";
 import WhatsappButton from "./WhatsappButton.jsx";
 import Slider from "./Slider.jsx";
+import Card from "./Card.jsx";
 
 export {
   Header,
@@ -30,4 +31,5 @@ export {
   Footer,
   WhatsappButton,
   Slider,
+  Card,
 };
