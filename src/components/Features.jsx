@@ -147,8 +147,17 @@ const Features = () => {
   ];
   return (
     <>
-      <section className="bg-white dark:bg-gray-900">
-        <div className="py-32 px-4 mx-auto max-w-screen-xl sm:py-48 lg:px-6">
+      <section className="bg-white dark:bg-gray-900 text-center">
+        <div className=" px-4 mx-auto max-w-screen-xl pt-24 pb-24 lg:px-6">
+          <div className="w-full mb-8 lg:mb-16">
+            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+              Designed for business teams like yours
+            </h2>
+            <p className="text-gray-500 sm:text-xl dark:text-gray-400">
+              Here at Flowbite we focus on markets where technology, innovation,
+              and capital can unlock long-term value and drive economic growth.
+            </p>
+          </div>
           <Slider {...settings} className="w-full  pb-8">
             {features.map((feature, i) => (
               <div key={i}>
