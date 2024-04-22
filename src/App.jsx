@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Header,
   Hero,
@@ -10,17 +10,40 @@ import {
   Footer,
   WhatsappButton,
   Slider,
+  Products,
 } from "./components/index";
 import "./App.css";
 
 const App = () => {
   const [showContact, setShowContact] = useState(false);
+  const [theme, setTheme] = useState(
+    JSON.parse(localStorage.getItem("darkMode"))
+      ? JSON.parse(localStorage.getItem("darkMode"))
+      : "light"
+  );
+  console.log(theme);
+  const handleDarkMode = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("darkMode", JSON.stringify(newTheme));
+  };
+
+  useEffect(() => {
+    if (theme === "light" || !theme) {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+  }, [theme]);
   return (
     <div>
-      <Header />
+      <Header theme={theme} handleDarkMode={handleDarkMode} />
       <Slider />
       <section id="features">
         <Features />
+      </section>
+      <section id="products">
+        <Products />
       </section>
       <section id="company">
         <ContentSection />
@@ -29,9 +52,9 @@ const App = () => {
         <Team />
       </section>
       <section id="customer">
-        <Customer />
+        <Customer theme={theme} />
       </section>
-      <Footer />
+      <Footer theme={theme} />
       <WhatsappButton setShowContact={setShowContact} />
       {showContact && <Contact setShowContact={setShowContact} />}
     </div>

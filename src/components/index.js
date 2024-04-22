@@ -14,6 +14,8 @@ import Footer from "./Footer.jsx";
 import WhatsappButton from "./WhatsappButton.jsx";
 import Slider from "./Slider.jsx";
 import Card from "./Card.jsx";
+import CardProduct from "./CardProduct.jsx";
+import Products from "./Products.jsx";
 
 export {
   Header,
@@ -32,4 +34,6 @@ export {
   WhatsappButton,
   Slider,
   Card,
+  CardProduct,
+  Products,
 };

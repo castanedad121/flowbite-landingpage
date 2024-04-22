@@ -57,7 +57,7 @@ function Slider() {
   };
 
   return (
-    <div className="w-full h-[610px] pt-6 m-auto relative group bg-white dark:bg-gray-900">
+    <div className="w-full lg:h-[610px] pt-6 m-auto relative group bg-white dark:bg-gray-900">
       <div className="w-11/12 h-full bg-center bg-cover m-auto rounded-3xl flex justify-center shadow-2xl shadow-slate-900 dark:shadow-gray-600 overflow-hidden">
         {/* <img
           src={slides[currentIndex].url}

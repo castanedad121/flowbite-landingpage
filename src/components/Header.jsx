@@ -3,18 +3,24 @@ import logo from "../assets/logo-conectate.svg";
 import { FaMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa";
 
-const Header = () => {
-  const [theme, setTheme] = useState(
-    JSON.parse(localStorage.getItem("darkMode"))
-      ? JSON.parse(localStorage.getItem("darkMode"))
-      : "light"
-  );
-  console.log(theme);
-  const handleDarkMode = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    localStorage.setItem("darkMode", JSON.stringify(newTheme));
-  };
+const Header = (props) => {
+  const logoLigth =
+    "https://res.cloudinary.com/desaac6ma/image/upload/v1713798575/samples/Conectados%20al%20futuro/icoLigth_r9daxz.png";
+  const logoDark =
+    "https://res.cloudinary.com/desaac6ma/image/upload/v1713798582/samples/Conectados%20al%20futuro/icoDark_perxgv.png";
+
+  const { theme, handleDarkMode } = props && props;
+  // const [theme, setTheme] = useState(
+  //   JSON.parse(localStorage.getItem("darkMode"))
+  //     ? JSON.parse(localStorage.getItem("darkMode"))
+  //     : "light"
+  // );
+  // console.log(theme);
+  // const handleDarkMode = () => {
+  //   const newTheme = theme === "light" ? "dark" : "light";
+  //   setTheme(newTheme);
+  //   localStorage.setItem("darkMode", JSON.stringify(newTheme));
+  // };
 
   useEffect(() => {
     if (theme === "light" || !theme) {
@@ -31,12 +37,16 @@ const Header = () => {
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <a href="/" className="flex items-center">
               <img
-                src={logo}
+                src={theme === "light" ? logoLigth : logoDark}
                 className="mr-3 h-6 sm:h-9"
                 alt="Conectate al futuro Logo"
               />
-              <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-                CONECTATE AL FUTURO
+              <span className="self-center text-2xl font-bold whitespace-nowrap dark:text-white">
+                <span className="text-base font-normal text-[#9C0505]">
+                  {" "}
+                  CONECTADOS AL{" "}
+                </span>{" "}
+                FUTURO
               </span>
             </a>
             <div className="flex items-center lg:order-2">
@@ -63,7 +73,7 @@ const Header = () => {
                 aria-controls="mobile-menu-2"
                 aria-expanded="false"
               >
-                <span className="sr-only">Open main menu</span>
+                <span className="sr-only">menu</span>
                 <svg
                   className="w-6 h-6"
                   fill="currentColor"
@@ -101,7 +111,7 @@ const Header = () => {
                     className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
                     aria-current="page"
                   >
-                    Home
+                    Inicio
                   </a>
                 </li>
                 <li>
@@ -109,7 +119,15 @@ const Header = () => {
                     href="#features"
                     className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
                   >
-                    Features
+                    Servicios
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#products"
+                    className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                  >
+                    Productos
                   </a>
                 </li>
                 <li>
@@ -117,7 +135,7 @@ const Header = () => {
                     href="#company"
                     className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
                   >
-                    Company
+                    Acerca de Nosotros
                   </a>
                 </li>
                 <li>
@@ -125,7 +143,7 @@ const Header = () => {
                     href="#team"
                     className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
                   >
-                    Team
+                    Nuestro Equipo
                   </a>
                 </li>
                 <li>
@@ -133,7 +151,7 @@ const Header = () => {
                     href="#customer"
                     className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
                   >
-                    Customer
+                    Clientes
                   </a>
                 </li>
               </ul>
