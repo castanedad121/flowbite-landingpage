@@ -5,9 +5,13 @@ const CardProduct = ({ product }) => {
   const { img, size } = product && product;
   return (
     <div className="flex justify-center items-center flex-col h-56 ">
-      <div className="h-full w-full flex justify-center items-center">
-        <img src={img} alt="" className={`drop-shadow-xl ${size}`} />
-      </div>
+      <a className="h-full w-full flex justify-center items-center" href="#">
+        <img
+          src={img}
+          alt=""
+          className={`drop-shadow-xl ${size} hover:animate-wiggle`}
+        />
+      </a>
       <div className="h-8">
         <a
           href="#"

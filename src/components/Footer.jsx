@@ -4,9 +4,9 @@ import logo from "../assets/logo-conectate.svg";
 const Footer = (props) => {
   const { theme } = props && props;
   const logoLigth =
-    "https://res.cloudinary.com/desaac6ma/image/upload/v1713800000/samples/Conectados%20al%20futuro/logoLight_rpbhd8.png";
+    "https://res.cloudinary.com/desaac6ma/image/upload/v1714528059/samples/Conectados%20al%20futuro/CF-Logo-Ligth_naecyq.png";
   const logoDark =
-    "https://res.cloudinary.com/desaac6ma/image/upload/v1713799197/samples/Conectados%20al%20futuro/logoDark_rajdst.png";
+    "https://res.cloudinary.com/desaac6ma/image/upload/v1714528518/samples/Conectados%20al%20futuro/Dise%C3%B1o_sin_t%C3%ADtulo-removebg-preview_cdf4mf.png";
   return (
     <>
       <footer className="p-4 bg-gray-100 md:p-8 lg:p-10 dark:bg-gray-800">
@@ -16,9 +16,9 @@ const Footer = (props) => {
             className="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white"
           >
             {theme === "light" ? (
-              <img src={logoLigth} alt="" className="size-64" />
+              <img src={logoLigth} alt="" className="w-64" />
             ) : (
-              <img src={logoDark} alt="" className="size-64" />
+              <img src={logoDark} alt="" className="w-64" />
             )}
           </a>
           <p className="my-6 text-gray-500 dark:text-gray-400">

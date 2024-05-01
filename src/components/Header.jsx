@@ -5,22 +5,11 @@ import { FaSun } from "react-icons/fa";
 
 const Header = (props) => {
   const logoLigth =
-    "https://res.cloudinary.com/desaac6ma/image/upload/v1713798575/samples/Conectados%20al%20futuro/icoLigth_r9daxz.png";
+    "https://res.cloudinary.com/desaac6ma/image/upload/v1714528055/samples/Conectados%20al%20futuro/CF-LogoP-Ligth_ru2sdq.png";
   const logoDark =
-    "https://res.cloudinary.com/desaac6ma/image/upload/v1713798582/samples/Conectados%20al%20futuro/icoDark_perxgv.png";
+    "https://res.cloudinary.com/desaac6ma/image/upload/v1714528673/samples/Conectados%20al%20futuro/CF-LogoPq-Dark_beeapw.png";
 
   const { theme, handleDarkMode } = props && props;
-  // const [theme, setTheme] = useState(
-  //   JSON.parse(localStorage.getItem("darkMode"))
-  //     ? JSON.parse(localStorage.getItem("darkMode"))
-  //     : "light"
-  // );
-  // console.log(theme);
-  // const handleDarkMode = () => {
-  //   const newTheme = theme === "light" ? "dark" : "light";
-  //   setTheme(newTheme);
-  //   localStorage.setItem("darkMode", JSON.stringify(newTheme));
-  // };
 
   useEffect(() => {
     if (theme === "light" || !theme) {
@@ -33,8 +22,8 @@ const Header = (props) => {
   return (
     <>
       <header>
-        <nav className="bg-gray-200  px-4 lg:px-6 py-2.5 dark:bg-gray-800">
-          <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+        <nav className="fixed z-[999999] w-full  bg-gray-200  px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+          <div className="flex flex-wrap justify-center lg:justify-between items-center mx-auto max-w-screen-xl">
             <a href="/" className="flex items-center">
               <img
                 src={theme === "light" ? logoLigth : logoDark}
@@ -49,7 +38,7 @@ const Header = (props) => {
                 FUTURO
               </span>
             </a>
-            <div className="flex items-center lg:order-2">
+            <div className="flex w-full pt-2 sm:pt-0 sm:w-auto justify-around lg:order-2">
               {theme === "light" ? (
                 <button
                   className="text-gray-800 dark:text-white hover:bg-sky-300  font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700"

@@ -38,7 +38,9 @@ const App = () => {
   return (
     <div>
       <Header theme={theme} handleDarkMode={handleDarkMode} />
-      <Slider />
+      <div className="pt-10" id="home">
+        <Slider />
+      </div>
       <section id="features">
         <Features />
       </section>

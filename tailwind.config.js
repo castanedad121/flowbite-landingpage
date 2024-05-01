@@ -20,6 +20,9 @@ export default {
         },
       },
     },
+    container: {
+      center: true,
+    },
     fontFamily: {
       body: [
         "Inter",

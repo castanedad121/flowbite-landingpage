@@ -45,3 +45,18 @@
 .slick-dots li.slick-active button:before {
     color: #2662E9;
 }
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-400px * 11 - 0.5rem * 22));
+    }
+}
+
+.animate-scroll {
+    animation: scroll 30s linear infinite;
+}
