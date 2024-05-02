@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Header,
-  Hero,
   Features,
   ContentSection,
   Team,
@@ -12,6 +11,7 @@ import {
   Slider,
   Products,
 } from "./components/index";
+import useIntersection from "./hooks/useIntersection";
 import "./App.css";
 
 const App = () => {
@@ -21,12 +21,32 @@ const App = () => {
       ? JSON.parse(localStorage.getItem("darkMode"))
       : "light"
   );
-  console.log(theme);
+
   const handleDarkMode = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     localStorage.setItem("darkMode", JSON.stringify(newTheme));
   };
+
+  const [home, isHome] = useIntersection({
+    threshold: 0.5,
+  });
+  const [features, isFeatures] = useIntersection({
+    threshold: 0.5,
+  });
+  const [products, isProducts] = useIntersection({
+    threshold: 0.5,
+  });
+  const [company, isCompany] = useIntersection({
+    threshold: 0.5,
+  });
+  const [team, isTeam] = useIntersection({
+    threshold: 0.2,
+  });
+
+  const [customer, isCustomer] = useIntersection({
+    threshold: 0.5,
+  });
 
   useEffect(() => {
     if (theme === "light" || !theme) {
@@ -37,23 +57,32 @@ const App = () => {
   }, [theme]);
   return (
     <div>
-      <Header theme={theme} handleDarkMode={handleDarkMode} />
-      <div className="pt-10" id="home">
+      <Header
+        theme={theme}
+        handleDarkMode={handleDarkMode}
+        isHome={isHome}
+        isFeatures={isFeatures}
+        isProducts={isProducts}
+        isCompany={isCompany}
+        isTeam={isTeam}
+        isCustomer={isCustomer}
+      />
+      <div className="pt-10" id="home" ref={home}>
         <Slider />
       </div>
-      <section id="features">
+      <section id="features" ref={features}>
         <Features />
       </section>
-      <section id="products">
+      <section id="products" ref={products}>
         <Products />
       </section>
-      <section id="company">
+      <section id="company" ref={company}>
         <ContentSection />
       </section>
-      <section id="team">
+      <section id="team" ref={team}>
         <Team />
       </section>
-      <section id="customer">
+      <section id="customer" ref={customer}>
         <Customer theme={theme} />
       </section>
       <Footer theme={theme} />

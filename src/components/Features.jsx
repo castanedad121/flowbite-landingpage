@@ -120,7 +120,7 @@ const Features = () => {
   return (
     <>
       <section className="bg-white dark:bg-gray-900 text-center">
-        <div className=" px-4 mx-auto max-w-screen-xl pt-24 pb-24 lg:px-6">
+        <div className=" px-4 mx-auto max-w-screen-xl pt-24 lg:pt-16 lg:px-6">
           <div className="w-full mb-8 lg:mb-16">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
               Soluciones Integrales para la Excelencia Empresarial
