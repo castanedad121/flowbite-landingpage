@@ -66,8 +66,9 @@ const App = () => {
         isCompany={isCompany}
         isTeam={isTeam}
         isCustomer={isCustomer}
+        showContact={showContact}
       />
-      <div className="pt-10" id="home" ref={home}>
+      <div className={showContact ? "" : "pt-16"} id="home" ref={home}>
         <Slider />
       </div>
       <section id="features" ref={features}>

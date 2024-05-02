@@ -13,7 +13,7 @@ const Customer = (props) => {
   return (
     <>
       <section className="bg-white dark:bg-gray-900">
-        <div className="py-24 lg:pt-16 mx-auto w-full px-4">
+        <div className="py-24  mx-auto w-full px-4">
           <h2 className="mb-8 lg:mb-16 text-3xl font-extrabold tracking-tight leading-tight text-center text-gray-900 dark:text-white md:text-4xl">
             Empresas que Confían en Nosotros
           </h2>

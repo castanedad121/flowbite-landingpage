@@ -20,6 +20,7 @@ const Header = (props) => {
     isCompany,
     isTeam,
     isCustomer,
+    showContact,
   } = props && props;
   const [menu, setMenu] = useState(false);
 
@@ -34,7 +35,13 @@ const Header = (props) => {
   return (
     <>
       <header>
-        <nav className="fixed z-[999999] w-full  bg-gray-200 py-1 px-4 lg:px-6 lg:py-2.5 dark:bg-gray-800">
+        <nav
+          className={
+            showContact
+              ? "w-full  bg-gray-200 py-1 px-4 lg:px-6 lg:py-2.5 dark:bg-gray-800"
+              : "fixed z-[999999] w-full  bg-gray-200 py-1 px-4 lg:px-6 lg:py-2.5 dark:bg-gray-800"
+          }
+        >
           <div className="flex justify-center lg:justify-between items-center mx-auto max-w-screen-xl">
             <a href="/" className="flex items-center">
               <img
