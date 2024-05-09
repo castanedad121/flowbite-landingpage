@@ -10,6 +10,7 @@ import {
   WhatsappButton,
   Slider,
   Products,
+  Hero,
 } from "./components/index";
 import useIntersection from "./hooks/useIntersection";
 import "./App.css";
@@ -68,8 +69,16 @@ const App = () => {
         isCustomer={isCustomer}
         showContact={showContact}
       />
-      <div className={showContact ? "" : "pt-16"} id="home" ref={home}>
-        <Slider />
+      <div
+        className={
+          showContact
+            ? "bg-white dark:bg-gray-900"
+            : "pt-16 bg-white dark:bg-gray-900"
+        }
+        id="home"
+        ref={home}
+      >
+        <Hero />
       </div>
       <section id="features" ref={features}>
         <Features />

@@ -51,7 +51,7 @@ const Features = () => {
       svg: (
         <MdOutlineSupportAgent className="size-8 text-primary-600 lg:size-10 dark:text-primary-300" />
       ),
-      img: "https://res.cloudinary.com/desaac6ma/image/upload/v1714536033/happy-customer-service-representative-using-computer-having-video-call-with-clients-while-working-call-center_1_dkzn0c.jpg",
+      img: "https://res.cloudinary.com/desaac6ma/image/upload/v1715212486/samples/Conectados%20al%20futuro/servicios/Soporte_T%C3%A9cnico_f9mkfi.jpg",
     },
     {
       title: "Configuración e Instalación",
@@ -60,7 +60,7 @@ const Features = () => {
       svg: (
         <GrInstall className="size-8 text-primary-600 lg:size-10 dark:text-primary-300" />
       ),
-      img: "https://res.cloudinary.com/desaac6ma/image/upload/v1714537476/adult-men-working-project-office_1_fpuqin.jpg",
+      img: "https://res.cloudinary.com/desaac6ma/image/upload/v1715212486/samples/Conectados%20al%20futuro/servicios/Configuraci%C3%B3n_e_Instalaci%C3%B3n_l7pia2.jpg",
     },
     {
       title: "Capacitación",
@@ -69,7 +69,7 @@ const Features = () => {
       svg: (
         <MdModelTraining className="size-8 text-primary-600 lg:size-10 dark:text-primary-300" />
       ),
-      img: "https://res.cloudinary.com/desaac6ma/image/upload/v1714537683/young-business-people-modern-office-working-solution-having-meeting-about-new-project_1_ch3ogj.jpg",
+      img: "https://res.cloudinary.com/desaac6ma/image/upload/v1715212486/samples/Conectados%20al%20futuro/servicios/Capacitaci%C3%B3n_q4n44t.jpg",
     },
     {
       title: "Desarrollos a la medida",
@@ -78,7 +78,7 @@ const Features = () => {
       svg: (
         <MdDeveloperBoard className="size-8 text-primary-600 lg:size-10 dark:text-primary-300" />
       ),
-      img: "https://res.cloudinary.com/desaac6ma/image/upload/v1714537804/html-css-collage-concept-with-person_1_filvns.jpg",
+      img: "https://res.cloudinary.com/desaac6ma/image/upload/v1715212486/samples/Conectados%20al%20futuro/servicios/Desarrollos_a_la_medida_unlnzs.jpg",
     },
     {
       title: "Implementación de proyectos de mejora",
@@ -87,7 +87,7 @@ const Features = () => {
       svg: (
         <FaProjectDiagram className="size-8 text-primary-600 lg:size-10 dark:text-primary-300" />
       ),
-      img: "https://res.cloudinary.com/desaac6ma/image/upload/v1714538049/close-up-young-business-team-working_1_fowi4p.jpg",
+      img: "https://res.cloudinary.com/desaac6ma/image/upload/v1715212486/samples/Conectados%20al%20futuro/servicios/Implementaci%C3%B3n_de_proyectos_de_mejora_w4dzud.jpg",
     },
     {
       title: "Migración de información de sistema a sistema",
@@ -96,7 +96,7 @@ const Features = () => {
       svg: (
         <TbTransformFilled className="size-8 text-primary-600 lg:size-10 dark:text-primary-300" />
       ),
-      img: "https://res.cloudinary.com/desaac6ma/image/upload/v1714538390/modern-equipped-computer-lab_1_pse6mt.jpg",
+      img: "https://res.cloudinary.com/desaac6ma/image/upload/v1715212487/samples/Conectados%20al%20futuro/servicios/Migraci%C3%B3n_de_informaci%C3%B3n_de_sistema_a_sistema_ldpelj.jpg",
     },
     {
       title: "Asesoría Contable",
@@ -105,7 +105,7 @@ const Features = () => {
       svg: (
         <MdAccountBalanceWallet className="size-8 text-primary-600 lg:size-10 dark:text-primary-300" />
       ),
-      img: "https://res.cloudinary.com/desaac6ma/image/upload/v1714537378/portrait-adult-male-working-from-office_1_mqu2t9.jpg",
+      img: "https://res.cloudinary.com/desaac6ma/image/upload/v1715212486/samples/Conectados%20al%20futuro/servicios/Asesor%C3%ADa_Contable_hneqbk.jpg",
     },
     {
       title: "Software",
@@ -114,7 +114,7 @@ const Features = () => {
       svg: (
         <FaLaptopCode className="size-8 text-primary-600 lg:size-10 dark:text-primary-300" />
       ),
-      img: "https://res.cloudinary.com/desaac6ma/image/upload/v1714538480/team-developing-additional-layers-security-order-sustain-good-functionality-system-mixed-race-back-end-network-developers-analyzing-interface-database-cloud-processing-method_1_sav3lf.jpg",
+      img: "https://res.cloudinary.com/desaac6ma/image/upload/v1715212487/samples/Conectados%20al%20futuro/servicios/Software_ktauhm.jpg",
     },
   ];
   return (

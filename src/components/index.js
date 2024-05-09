@@ -16,6 +16,7 @@ import Slider from "./Slider.jsx";
 import Card from "./Card.jsx";
 import CardProduct from "./CardProduct.jsx";
 import Products from "./Products.jsx";
+import SliderHero from "./SliderHero.jsx";
 
 export {
   Header,
@@ -36,4 +37,5 @@ export {
   Card,
   CardProduct,
   Products,
+  SliderHero,
 };

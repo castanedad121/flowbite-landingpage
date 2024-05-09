@@ -49,7 +49,7 @@ const Header = (props) => {
                 className="mr-3 h-11"
                 alt="Conectate al futuro Logo"
               />
-              <span className="hidden xs:block self-center text-2xl font-bold whitespace-nowrap dark:text-white">
+              <span className="hidden lg:block self-center text-2xl font-bold whitespace-nowrap dark:text-white">
                 <span className="text-base font-normal text-[#9C0505]">
                   {" "}
                   CONECTADOS AL{" "}
