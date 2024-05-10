@@ -1,36 +1,30 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { IoMdClose } from "react-icons/io";
 import { MdLocalPhone } from "react-icons/md";
 import { MdAlternateEmail } from "react-icons/md";
+import emailjs from "@emailjs/browser";
 
 const Contact = (props) => {
   const { setShowContact } = props && props;
-  const [form, setForm] = useState({ email: "", subject: "", message: "" });
+  const refForm = useRef();
 
-  const handlerChangeForm = (event) => {
-    setForm({ ...form, [event.target.id]: event.target.value });
-  };
   const HandlerSubmit = (e) => {
     e.preventDefault();
-    if (window.Email) {
-      window.Email.send({
-        SecureToken: "f197392d-62a4-45ea-8802-712ddab7a94a",
-        To: "venta@conectatealfuturo.com",
-        From: form.email,
-        Subject: form.subject,
-        Body: form.message,
-      }).then((message) => {
-        if (message == "OK") {
-          setForm({ email: "", subject: "", message: "" });
-          document.getElementById("email").innerText = "";
-          document.getElementById("subject").innerText = "";
-          document.getElementById("message").innerText = "";
-          alert(`¡${message}, gracias por tu mensaje, te contáctaremos!`);
-        } else {
-          alert(message);
+    const serviceId = "service_97bb16e";
+    const templateId = "template_yjjz6cr";
+    const apiKey = "l_Ypylu0KIVd41cXT";
+
+    emailjs
+      .sendForm(serviceId, templateId, refForm.current, apiKey)
+      .then((response) => {
+        if (response.text === "OK") {
+          document.getElementById("email").value = "";
+          document.getElementById("subject").value = "";
+          document.getElementById("message").value = "";
+          alert(`¡${response.text}, gracias por tu mensaje, te contáctaremos!`);
         }
-      });
-    }
+      })
+      .catch((error) => alert(`Error: ${error}`));
   };
 
   return (
@@ -90,6 +84,7 @@ const Contact = (props) => {
               </div>
             </div>
             <form
+              ref={refForm}
               className="space-y-4 xl:space-y-8"
               onSubmit={(e) => HandlerSubmit(e)}
             >
@@ -103,10 +98,9 @@ const Contact = (props) => {
                 <input
                   type="email"
                   id="email"
-                  value={form.email}
+                  name="email"
                   className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                   placeholder="name@email.com"
-                  onChange={handlerChangeForm}
                   required
                 />
               </div>
@@ -120,27 +114,25 @@ const Contact = (props) => {
                 <input
                   type="text"
                   id="subject"
-                  value={form.subject}
+                  name="subject"
                   className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                   placeholder="Asunto"
-                  onChange={handlerChangeForm}
                   required
                 />
               </div>
               <div className="sm:col-span-2">
                 <label
                   htmlFor="message"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400 "
                 >
                   Mensaje
                 </label>
                 <textarea
                   id="message"
-                  value={form.message}
+                  name="message"
                   rows="6"
                   className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   placeholder="¿En qué podemos ayudarte?"
-                  onChange={handlerChangeForm}
                   required
                 ></textarea>
               </div>
