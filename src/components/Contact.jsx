@@ -10,15 +10,22 @@ const Contact = (props) => {
   const handlerChangeForm = (event) => {
     setForm({ ...form, [event.target.id]: event.target.value });
   };
-  const HandlerSubmit = () => {
+  const HandlerSubmit = (e) => {
+    e.preventDefault();
     if (window.Email) {
       window.Email.send({
-        SecureToken: "82a80c08-6410-46c0-bacf-9e7412a9d3f8",
+        SecureToken: "f197392d-62a4-45ea-8802-712ddab7a94a",
         To: "venta@conectatealfuturo.com",
         From: form.email,
         Subject: form.subject,
         Body: form.message,
-      }).then((message) => alert(message));
+      }).then((message) => {
+        setForm({ email: "", subject: "", message: "" });
+        document.getElementById("email").innerText = "";
+        document.getElementById("subject").innerText = "";
+        document.getElementById("message").innerText = "";
+        alert(`¡${message}, gracias por tu mensaje, te contáctaremos!`);
+      });
     }
   };
 
@@ -78,7 +85,10 @@ const Contact = (props) => {
                 </div>
               </div>
             </div>
-            <form className="space-y-4 xl:space-y-8" onSubmit={HandlerSubmit}>
+            <form
+              className="space-y-4 xl:space-y-8"
+              onSubmit={(e) => HandlerSubmit(e)}
+            >
               <div>
                 <label
                   htmlFor="Correo electrónico"

@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import useIntersection from "../hooks/useIntersection";
 
 const Team = () => {
-  const duration = ["[1500ms]", "[2000ms]", "[2500ms]"];
+  const duration = [
+    "animate-delay-[1500ms]",
+    "animate-delay-[2000ms]",
+    "animate-delay-[2500ms]",
+  ];
   const [title, istitle] = useIntersection({
     threshold: 0.4,
   });
@@ -43,7 +47,7 @@ const Team = () => {
                 team.map((menber, index) => (
                   <div
                     key={index}
-                    className={`text-center items-center w-[310px] bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700 animate-fade-down animate-delay-${duration[index]} ms`}
+                    className={`text-center items-center w-[310px] bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700 animate-fade-down ${duration[index]}`}
                   >
                     <div className="flex flex-col p-5 gap-4 w-full">
                       <h3 className="text-xl pt-4 font-bold tracking-tight text-gray-900 dark:text-white">
