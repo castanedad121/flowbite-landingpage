@@ -20,11 +20,15 @@ const Contact = (props) => {
         Subject: form.subject,
         Body: form.message,
       }).then((message) => {
-        setForm({ email: "", subject: "", message: "" });
-        document.getElementById("email").innerText = "";
-        document.getElementById("subject").innerText = "";
-        document.getElementById("message").innerText = "";
-        alert(`¡${message}, gracias por tu mensaje, te contáctaremos!`);
+        if (message == "OK") {
+          setForm({ email: "", subject: "", message: "" });
+          document.getElementById("email").innerText = "";
+          document.getElementById("subject").innerText = "";
+          document.getElementById("message").innerText = "";
+          alert(`¡${message}, gracias por tu mensaje, te contáctaremos!`);
+        } else {
+          alert(message);
+        }
       });
     }
   };
