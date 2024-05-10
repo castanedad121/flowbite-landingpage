@@ -1,5 +1,5 @@
-import React from "react";
-import logo from "../assets/logo-conectate.svg";
+import { MdLocalPhone } from "react-icons/md";
+import { MdAlternateEmail } from "react-icons/md";
 
 const Footer = (props) => {
   const { theme } = props && props;
@@ -22,9 +22,43 @@ const Footer = (props) => {
             )}
           </a>
           <p className="my-6 text-gray-500 dark:text-gray-400">
-            Transformando empresas, construyendo el futuro.
+            Siempre conectándote al futuro.
           </p>
-          <ul className="flex flex-wrap justify-center items-center mb-6 text-gray-900 dark:text-white">
+          <div className="flex w-full justify-center">
+            <div className=" flex w-full lg:w-1/2 py-4 gap-4 justify-center flex-col md:flex-row  text-gray-900 items-center  my-4">
+              <div className="flex gap-2 justify-center items-center md:w-1/2 ">
+                <div className="flex justify-center ">
+                  <MdAlternateEmail className="size-8 dark:text-gray-300" />
+                </div>
+                <div className="flex w-52 flex-col justify-center items-center flex-grow md:flex-grow-0">
+                  <h1 className="text-center w-full font-medium text-sm dark:text-white">
+                    Correos
+                  </h1>
+                  <div className="flex w-full flex-col text-xs font-light text-slate-900 dark:text-slate-200 justify-center items-center">
+                    <span>venta@conectatealfuturo.com</span>
+                    <span>soporte@conectatealfuturo.com</span>
+                    <span>cobranza@conectatealfuturo.com</span>
+                  </div>
+                </div>
+              </div>
+              <div className="flex gap-2 justify-center items-center md:w-1/2 ">
+                <div className="flex justify-center  ">
+                  <MdLocalPhone className="size-8 dark:text-gray-300" />
+                </div>
+                <div className="flex w-52  flex-col justify-center items-center flex-grow md:flex-grow-0">
+                  <h1 className="text-center text-nowrap font-medium text-sm dark:text-white">
+                    Números de Contacto{" "}
+                  </h1>
+                  <div className="flex flex-col text-xs  font-light text-slate-900 dark:text-slate-200">
+                    <span>+55 1882 5986</span>
+                    <span>+55 8118 0495</span>
+                    <span>+55 6205 8956</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul className="flex w-full  flex-wrap justify-center items-center mb-6 text-gray-900 dark:text-white">
             <li>
               <a
                 href="/"

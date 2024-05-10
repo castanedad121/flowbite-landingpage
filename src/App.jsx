@@ -8,7 +8,6 @@ import {
   Customer,
   Footer,
   WhatsappButton,
-  Slider,
   Products,
   Hero,
 } from "./components/index";
@@ -22,7 +21,6 @@ const App = () => {
       ? JSON.parse(localStorage.getItem("darkMode"))
       : "light"
   );
-
   const handleDarkMode = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
@@ -42,7 +40,7 @@ const App = () => {
     threshold: 0.5,
   });
   const [team, isTeam] = useIntersection({
-    threshold: 0.2,
+    threshold: 0.5,
   });
 
   const [customer, isCustomer] = useIntersection({
@@ -57,7 +55,7 @@ const App = () => {
     }
   }, [theme]);
   return (
-    <div>
+    <div className="bg-white dark:bg-gray-900">
       <Header
         theme={theme}
         handleDarkMode={handleDarkMode}

@@ -49,7 +49,7 @@ const Header = (props) => {
                 className="mr-3 h-11"
                 alt="Conectate al futuro Logo"
               />
-              <span className="hidden lg:block self-center text-2xl font-bold whitespace-nowrap dark:text-white">
+              <span className="hidden md:block self-center text-2xl font-bold whitespace-nowrap dark:text-white">
                 <span className="text-base font-normal text-[#9C0505]">
                   {" "}
                   CONECTADOS AL{" "}
@@ -177,7 +177,7 @@ const Header = (props) => {
               className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
               id="mobile-menu-2"
             >
-              <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+              <ul className="flex flex-col mt-4 font-medium  lg:flex-row  lg:space-x-4 lg:mt-0">
                 <li>
                   <a
                     href="/"

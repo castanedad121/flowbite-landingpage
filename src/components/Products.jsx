@@ -1,16 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import { CardProduct } from "./index";
-import { MdOutlineSupportAgent } from "react-icons/md";
-import { GrInstall } from "react-icons/gr";
-import { MdModelTraining } from "react-icons/md";
-import { MdDeveloperBoard } from "react-icons/md";
-import { FaProjectDiagram } from "react-icons/fa";
-import { TbTransformFilled } from "react-icons/tb";
-import { MdAccountBalanceWallet } from "react-icons/md";
-import { FaLaptopCode } from "react-icons/fa6";
+import useIntersection from "../hooks/useIntersection";
 
 const Products = () => {
+  const [title, istitle] = useIntersection({
+    threshold: 0.4,
+  });
+  const [visibility, setVisibility] = useState(false);
   var settings = {
     dots: true,
     infinite: false,
@@ -23,7 +20,7 @@ const Products = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          infinite: false,
+          infinite: true,
           dots: true,
         },
       },
@@ -159,30 +156,37 @@ const Products = () => {
   ];
   return (
     <>
-      <section className="bg-white dark:bg-gray-900 text-center ">
-        <div className=" px-4 mx-auto max-w-screen-xl pt-24 lg:px-6 ">
-          <div className="w-full mb-8 lg:mb-16 ">
-            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-              Suite Integral de Software Empresarial
-            </h2>
-            <p className="text-gray-500 sm:text-xl dark:text-gray-400">
-              Sumérgete en nuestra suite integral de software empresarial, donde
-              encontrarás una amplia variedad de soluciones diseñadas para
-              impulsar la eficiencia y el rendimiento en todos los aspectos de
-              tu negocio.
-            </p>
+      <section ref={title} className="bg-white dark:bg-gray-900 text-center ">
+        {istitle || visibility ? (
+          <div className=" px-4 mx-auto max-w-screen-xl pt-20 pb-0 d:pt-[101px] md:pb-16 lg:px-6 ">
+            <div className="w-full md:mb-16  ">
+              <h2
+                className="mb-2 md:mb-16 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white animate-fade-up "
+                onAnimationStart={() => setVisibility(true)}
+              >
+                Suite Integral de Software Empresarial
+              </h2>
+              <p className="text-gray-500 sm:text-xl dark:text-gray-400 animate-fade-up animate-delay-200">
+                Sumérgete en nuestra suite integral de software empresarial,
+                donde encontrarás una amplia variedad de soluciones diseñadas
+                para impulsar la eficiencia y el rendimiento en todos los
+                aspectos de tu negocio.
+              </p>
+            </div>
+            <Slider
+              {...settings}
+              className="w-full pb-0 md:pb-8 animate-fade animate-delay-1000"
+            >
+              {products.map((product, i) => (
+                <div key={i}>
+                  <CardProduct product={product} />
+                </div>
+              ))}
+            </Slider>
           </div>
-          <Slider
-            {...settings}
-            className="w-full flex justify-center items-center pb-8"
-          >
-            {products.map((product, i) => (
-              <div key={i} className="">
-                <CardProduct product={product} />
-              </div>
-            ))}
-          </Slider>
-        </div>
+        ) : (
+          <div className="px-4 mx-auto max-w-screen-xl pt-24  lg:px-6 h-screen"></div>
+        )}
       </section>
     </>
   );

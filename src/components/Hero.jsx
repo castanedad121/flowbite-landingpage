@@ -4,11 +4,11 @@ import { SliderHero } from "../components/index";
 const Hero = () => {
   return (
     <>
-      <section className=" bg-white dark:bg-gray-900 pt-20 md:pt-28 pb-3 ">
+      <section className=" bg-white dark:bg-gray-900 py-4 md:py-28 pb-3 ">
         <div className="  px-4 mx-auto max-w-screen-xl  lg:px-6    ">
           <div className="flex justify-center w-full gap-4 flex-wrap-reverse md:flex-nowrap ">
-            <div className="flex flex-col w-1/2">
-              <h1 className="mb-4 text-5xl font-extrabold tracking-tight leading-none  lg:text-6xl dark:text-white animate-fade-down animate-duration-[3000ms]">
+            <div className="flex flex-col md:w-1/2">
+              <h1 className=" mb-4 text-5xl font-extrabold tracking-tight leading-none  md:text-6xl dark:text-white animate-fade-down animate-duration-[3000ms]">
                 Innovación para tu empresa
               </h1>
               <p className="mb-6 text-xl text-gray-500 lg:mb-8 lg:text-xl dark:text-gray-400 animate-fade-up animate-duration-[3000ms]">
@@ -49,7 +49,7 @@ const Hero = () => {
                 alt="mockup"
                 className=" drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]  dark:drop-shadow-[0_35px_35px_rgba(0,192,243,0.25)] w-80 md:w-96 animate-fade-up animate-duration-[3000ms] "
               />
-              <div className="absolute h-[200px] w-[300px] top-0 md:top-3">
+              <div className="absolute h-[200px] w-[300px] top-[-10px]  bottom-11   sm:top-3 scale-90">
                 <SliderHero />
               </div>
             </div>

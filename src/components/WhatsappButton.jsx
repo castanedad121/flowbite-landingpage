@@ -4,7 +4,7 @@ const WhatsappButton = ({ setShowContact }) => {
   return (
     <>
       <a
-        href="https://api.whatsapp.com/send?phone=1234567891&text=Hola, me gustaria Obtener más información"
+        href="https://api.whatsapp.com/send?phone=+525518825986&text=Hola, me gustaria Obtener más información, sobre sus productos."
         className="drop-shadow-xl fixed w-14 h-14 bottom-10 right-10  rounded-full flex items-center hover:bg-[#1ab152] hover:scale-125"
         target="_blank"
       >

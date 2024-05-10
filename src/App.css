@@ -38,8 +38,18 @@
     margin-right: 0px;
 }
 
+.slick-dots {
+    padding-top: 10px;
+    padding-bottom: 12px;
+    position: relative;
+    top: 0px;
+    display: flex;
+    direction: flex-column;
+}
+
 .slick-dots li button:before {
     color: #2662E9;
+
 }
 
 .slick-dots li.slick-active button:before {

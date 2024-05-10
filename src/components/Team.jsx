@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import useIntersection from "../hooks/useIntersection";
 
 const Team = () => {
+  const duration = ["[1500ms]", "[2000ms]", "[2500ms]"];
+  const [title, istitle] = useIntersection({
+    threshold: 0.4,
+  });
+  const [visibility, setVisibility] = useState(false);
   const team = [
     {
       name: "Enrique Montes De Oca Tapia ",
@@ -16,40 +22,44 @@ const Team = () => {
   ];
   return (
     <>
-      <section className="bg-white dark:bg-gray-900 pt-24 pb-1">
-        <div className=" px-4 mx-auto max-w-screen-xl  lg:px-6 ">
-          <div className="mx-auto text-center mb-8 lg:mb-16">
-            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-              Talento detrás de CONECTATE AL FUTURO
-            </h2>
-            <p className="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
-              Nuestro equipo, expertos comprometidos con tu éxito empresarial,
-              trabajando juntos para optimizar tus procesos, maximizar
-              resultados y ofrecerte soluciones innovadoras.
-            </p>
-          </div>
-          <div className="flex gap-8 flex-wrap mb-6 justify-center">
-            {team.length &&
-              team.map((menber, index) => (
-                <div
-                  key={index}
-                  className="text-center items-center w-[310px] bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700"
-                >
-                  <div className="flex flex-col p-5 gap-4 w-full">
-                    <h3 className="text-xl pt-4 font-bold tracking-tight text-gray-900 dark:text-white">
-                      {menber.name}
-                    </h3>
-                    <span className="text-xl rounded-lg py-2 shadow-lg dark:shadow-gray-50 text-[#9C0505] dark:text-[#ff2c2c9f] ">
-                      {menber.position}
-                    </span>
-                    <p className=" font-light text-gray-500 dark:text-gray-400">
-                      {menber.description}
-                    </p>
+      <section ref={title} className="bg-white dark:bg-gray-900 ">
+        {istitle || visibility ? (
+          <div className=" px-4 mx-auto max-w-screen-xl pt-20 lg:px-6 md:pt-24 pb-1 ">
+            <div className="mx-auto text-center mb-6 lg:mb-28">
+              <h2
+                className="mb-2 md:mb-20 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white animate-jump-in animate-duration-[3000ms]"
+                onAnimationStart={() => setVisibility(true)}
+              >
+                Talento detrás de CONECTATE AL FUTURO
+              </h2>
+              <p className="font-light text-gray-500 lg:mb-20 sm:text-xl dark:text-gray-400 animate-fade animate-delay-1000">
+                Nuestro equipo, expertos comprometidos con tu éxito empresarial,
+                trabajando juntos para optimizar tus procesos, maximizar
+                resultados y ofrecerte soluciones innovadoras.
+              </p>
+            </div>
+            <div className="flex gap-8 flex-wrap md:pb-[146px] justify-center">
+              {team.length &&
+                team.map((menber, index) => (
+                  <div
+                    key={index}
+                    className={`text-center items-center w-[310px] bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700 animate-fade-down animate-delay-${duration[index]} ms`}
+                  >
+                    <div className="flex flex-col p-5 gap-4 w-full">
+                      <h3 className="text-xl pt-4 font-bold tracking-tight text-gray-900 dark:text-white">
+                        {menber.name}
+                      </h3>
+                      <span className="text-xl rounded-lg py-2 shadow-lg dark:shadow-md dark:shadow-gray-200 text-[#9C0505] dark:text-[#ff2c2c9f] ">
+                        {menber.position}
+                      </span>
+                      <p className=" font-light text-gray-500 dark:text-gray-400">
+                        {menber.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
 
-            {/* <div className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+              {/* <div className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
               <a href="#">
                 <img
                   className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
@@ -144,8 +154,11 @@ const Team = () => {
                 </ul>
               </div>
             </div> */}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="px-4 mx-auto max-w-screen-xl pt-24  lg:px-6 h-screen"></div>
+        )}
       </section>
     </>
   );
