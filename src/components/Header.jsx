@@ -106,7 +106,7 @@ const Header = (props) => {
                     </li>
                     <li>
                       <a
-                        href="#features"
+                        href="/#features"
                         className={
                           isFeatures
                             ? "block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
@@ -119,7 +119,7 @@ const Header = (props) => {
                     </li>
                     <li>
                       <a
-                        href="#products"
+                        href="/#products"
                         className={
                           isProducts
                             ? "block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
@@ -132,7 +132,7 @@ const Header = (props) => {
                     </li>
                     <li>
                       <a
-                        href="#company"
+                        href="/#company"
                         className={
                           isCompany
                             ? "block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
@@ -145,7 +145,7 @@ const Header = (props) => {
                     </li>
                     <li>
                       <a
-                        href="#team"
+                        href="/#team"
                         className={
                           isTeam
                             ? "block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
@@ -158,7 +158,7 @@ const Header = (props) => {
                     </li>
                     <li>
                       <a
-                        href="#customer"
+                        href="/#customer"
                         className={
                           isCustomer
                             ? "block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
@@ -193,7 +193,7 @@ const Header = (props) => {
                 </li>
                 <li>
                   <a
-                    href="#features"
+                    href="/#features"
                     className={
                       isFeatures
                         ? "block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
@@ -205,7 +205,7 @@ const Header = (props) => {
                 </li>
                 <li>
                   <a
-                    href="#products"
+                    href="/#products"
                     className={
                       isProducts
                         ? "block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
@@ -217,7 +217,7 @@ const Header = (props) => {
                 </li>
                 <li>
                   <a
-                    href="#company"
+                    href="/#company"
                     className={
                       isCompany
                         ? "block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
@@ -229,7 +229,7 @@ const Header = (props) => {
                 </li>
                 <li>
                   <a
-                    href="#team"
+                    href="/#team"
                     className={
                       isTeam
                         ? "block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
@@ -241,7 +241,7 @@ const Header = (props) => {
                 </li>
                 <li>
                   <a
-                    href="#customer"
+                    href="/#customer"
                     className={
                       isCustomer
                         ? "block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"

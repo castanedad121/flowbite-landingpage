@@ -8,24 +8,24 @@ const Contact = (props) => {
   const { setShowContact } = props && props;
   const refForm = useRef();
 
-  const HandlerSubmit = (e) => {
-    e.preventDefault();
-    const serviceId = "service_97bb16e";
-    const templateId = "template_yjjz6cr";
-    const apiKey = "l_Ypylu0KIVd41cXT";
+  // const HandlerSubmit = (e) => {
+  //   e.preventDefault();
+  //   const serviceId = "service_97bb16e";
+  //   const templateId = "template_yjjz6cr";
+  //   const apiKey = "l_Ypylu0KIVd41cXT";
 
-    emailjs
-      .sendForm(serviceId, templateId, refForm.current, apiKey)
-      .then((response) => {
-        if (response.text === "OK") {
-          document.getElementById("email").value = "";
-          document.getElementById("subject").value = "";
-          document.getElementById("message").value = "";
-          alert(`¡${response.text}, gracias por tu mensaje, te contáctaremos!`);
-        }
-      })
-      .catch((error) => alert(`Error: ${error}`));
-  };
+  //   emailjs
+  //     .sendForm(serviceId, templateId, refForm.current, apiKey)
+  //     .then((response) => {
+  //       if (response.text === "OK") {
+  //         document.getElementById("email").value = "";
+  //         document.getElementById("subject").value = "";
+  //         document.getElementById("message").value = "";
+  //         alert(`¡${response.text}, gracias por tu mensaje, te contáctaremos!`);
+  //       }
+  //     })
+  //     .catch((error) => alert(`Error: ${error}`));
+  // };
 
   return (
     <>
@@ -86,9 +86,17 @@ const Contact = (props) => {
             <form
               ref={refForm}
               className="space-y-4 xl:space-y-8"
-              onSubmit={(e) => HandlerSubmit(e)}
+              action="https://formsubmit.co/venta@conectatealfuturo.com"
+              method="POST"
             >
               <div>
+                <input type="hidden" name="_captcha" value="false"></input>
+                <input type="hidden" name="_template" value="box"></input>
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="Formulario de contacto"
+                ></input>
                 <label
                   htmlFor="Correo electrónico"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -98,7 +106,7 @@ const Contact = (props) => {
                 <input
                   type="email"
                   id="email"
-                  name="email"
+                  name="Email"
                   className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                   placeholder="name@email.com"
                   required
@@ -114,7 +122,7 @@ const Contact = (props) => {
                 <input
                   type="text"
                   id="subject"
-                  name="subject"
+                  name="Asunto"
                   className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                   placeholder="Asunto"
                   required
@@ -129,13 +137,18 @@ const Contact = (props) => {
                 </label>
                 <textarea
                   id="message"
-                  name="message"
+                  name="Mensaje"
                   rows="6"
                   className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   placeholder="¿En qué podemos ayudarte?"
                   required
                 ></textarea>
               </div>
+              <input
+                type="hidden"
+                name="_next"
+                value="https://conectatealfuturo.com/thanks"
+              ></input>
               <button
                 type="submit"
                 className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
